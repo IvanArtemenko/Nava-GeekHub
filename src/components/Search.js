@@ -5,7 +5,7 @@ import axios from "axios";
 
 const locations = [];
 
-const getCountries = (arr) => {
+const getCountries = arr => {
     axios.get("https://restcountries.eu/rest/v1/all")
         .then(res => {
             for(let i in res.data){
