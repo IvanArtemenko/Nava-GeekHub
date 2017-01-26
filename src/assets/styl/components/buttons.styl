@@ -1,0 +1,44 @@
+.btn-transparent
+
+  &-white
+    padding 6px 20px
+    color white
+    border 1px solid white
+    background-color transparent
+    box-shadow none
+    transition all 0.3s ease-in-out
+
+    &:hover
+      color $font-color !important
+      background-color white
+    &:active
+    &:link
+    &:visited
+      color white
+
+  &-gray
+    @extend .btn-transparent-white
+    color $font-color !important
+    border 1px solid $border-color
+
+    &:hover
+      color white !important
+      background-color $font-color
+    &:active
+    &:link
+    &:visited
+      color $font-color
+
+  &-red
+    @extend .btn-transparent-white
+    background-color $accent-color
+    color white !important
+    border none
+
+    &:hover
+      color white !important
+      background-color darken($accent-color, 30%)
+    &:active
+    &:link
+    &:visited
+      color white

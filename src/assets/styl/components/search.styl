@@ -1,0 +1,73 @@
+.react-autosuggest__container
+  position relative
+  float none !important
+  center(0)
+  cols(8, 8, 9, 12)
+
+  div
+    position relative
+    display flex
+    width 100%
+    justify-content space-between
+    margin-bottom 0
+    center(100px)
+
+  input
+    display inline-block
+    height 60px
+    font-size 14px
+    text-indent 10px
+    text-transform uppercase
+    border-radius 5px 0 0 5px
+    outline none
+    border none
+    cols(9, 8, 8, 9)
+
+  .btn-transparent-red
+    font-weight bold
+    height 60px
+    border-radius 0 5px 5px 0
+    cols(3, 4, 4, 3)
+
+    +media($screen-sm-min)
+      font-size 12px
+
+    +media(630px)
+      font-size 0
+
+    img
+      margin -2px 5px 0 0
+      size(14px)
+
+.react-autosuggest__container--open .react-autosuggest__suggestions-container
+  position absolute
+  padding 0 !important
+  float none !important
+  top -105px
+  display block
+  margin-bottom 0
+  border-top 2px solid $accent-color
+  border-radius 0 0 5px 5px
+  background-color white
+  text-align left
+  cols(12, 12, 12, 12)
+
+  ul
+    padding 0
+    margin 0
+    list-style-type none
+
+  li
+    margin 0
+    padding 10px
+    font-size 14px
+
+.react-autosuggest__suggestion--focused
+  color white
+  cursor pointer
+  background-color $accent-color
+
+
+.react-autosuggest__suggestions-list
+  overflow-y scroll
+  height 192px

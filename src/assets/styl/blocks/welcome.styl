@@ -1,0 +1,40 @@
+.welcome-section
+  position relative
+  size(100%, 850px)
+
+  .welcome-video
+    position absolute
+    size(100%)
+    overflow hidden
+    z-index -100
+
+    video
+      min-width 100%
+      min-height 100%
+      width auto
+      height auto
+      centralizer(true, false)
+
+
+.section-jumbotron
+  center(200px)
+  margin-bottom 0
+  color $font-white
+  text-transform uppercase
+  text-align center
+  text-beautifier()
+
+  h1
+    font-size 60px
+    font-weight bold
+    transition opacity 0.3s ease-in-out
+
+    +media($screen-xs-max)
+      font-size 40px
+
+  p
+    font-size 25px
+    transition opacity 0.3s ease-in-out
+
+    +media($screen-xs-max)
+      font-size 16px

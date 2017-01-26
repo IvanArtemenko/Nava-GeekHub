@@ -1,0 +1,30 @@
+.numbers-panel
+  height 120px
+  margin-top -60px
+  border-radius 5px
+  background-color white
+  box-shadow 0 0 30px rgba(52, 52, 52, 0.15)
+
+  +media($screen-xs-max)
+    display none
+
+  ul
+    display flex
+    justify-content center
+    align-content center
+
+  li
+    margin-top 32px
+    padding 0 50px
+    text-align center
+    border-right 1px solid $gray-lighter
+
+    &:last-child
+      border none
+
+    span
+      font bold 24px Arial, "sans-serif"
+
+    p
+      color $text-muted
+      font-size 16px
