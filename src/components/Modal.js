@@ -7,7 +7,7 @@ const Modal = props =>
             onClick={props.onCloseModal}>
             &#x2716;
         </button>
-        <h1>{props.city && props.city}</h1>
+        <h1>{props.city}</h1>
         <div className="modal-description">
             <p className="text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.

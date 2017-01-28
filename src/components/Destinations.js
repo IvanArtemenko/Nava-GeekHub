@@ -119,7 +119,7 @@ class Destinations extends React.Component {
                                     state={state}
                                     onCloseModal={this.closeModal.bind(this)}
                                 />
-                            )};
+                            )}
                         </div>
                         <div className="row-fluid">
                             {this.state.infiniteData.map((data, i) =>
@@ -139,7 +139,7 @@ class Destinations extends React.Component {
                                     state={state}
                                     onCloseModal={this.closeModal.bind(this)}
                                 />
-                            )};
+                            )}
                         </div>
                         <LoadMore
                             onLoadData={this.loadData.bind(this)}
