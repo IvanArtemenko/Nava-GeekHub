@@ -1,0 +1,87 @@
+.main-footer
+  position relative
+  padding-bottom 50px
+  background-color $gray-color
+
+  &::before
+    content ""
+    position absolute
+    size(100%, 6px)
+    background url("../../assets/img/line.png") repeat-x
+
+  .footer-item
+    margin-top 50px
+    cols(3, 3, 3, 6)
+
+    +media($screen-xs-min)
+      cols(3, 3, 3, 12)
+
+    ul
+      margin 0
+      padding 0
+
+      li
+        padding-top 10px
+
+        a
+          color white
+          font-size 14px
+          text-decoration none
+          transition color 0.2s ease-in-out
+
+          &:hover
+            color $accent-color
+
+    p
+      color white
+      font-weight bold
+      text-transform uppercase
+      font-size 14px
+
+
+    form
+      overflow hidden
+
+      input
+        height 30px
+        font-size 14px
+        text-indent 10px
+        text-transform uppercase
+        border-radius 5px 0 0 5px
+        outline none
+        border none
+        cols(9, 9, 9, 9)
+
+      button
+        height 30px
+        border-radius 0 5px 5px 0
+        cols(3, 3, 3, 3)
+
+    .footer-social
+      margin-top 15px
+
+      li
+        padding-right 15px
+
+        +media($screen-md-min)
+          padding-right (15px / 2)
+
+        a
+          position relative
+          display block
+          background-color #717171
+          border-radius 50%
+          transition all 0.2s ease-in-out
+          size(44px)
+
+          +media($screen-md-min)
+            size(33px)
+
+          +media($screen-xs-max)
+            size(44px)
+
+          &:hover
+            background-color darken(@background-color, 10%)
+
+          img
+            centralizer(true, true)

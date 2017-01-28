@@ -19,6 +19,26 @@
   border-radius 5px
   z-index 10
   overflow hidden
+  cursor pointer
+
+  .mask img
+    transition all 0.3s ease-in-out
+
+  &::after
+    content ""
+    position absolute
+    bottom 0
+    background-color alpha(black, 50%)
+    transition all 0.3s ease-in-out
+    z-index -1
+    size(100%, 30px)
+    centralizer(true, false)
+
+  &:hover::after
+    size(100%, 150px)
+
+  &:hover .mask > img
+    size(105%)
 
   .destination-desc
   .boat-desc

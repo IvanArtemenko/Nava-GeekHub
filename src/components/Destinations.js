@@ -7,6 +7,7 @@ import Ibiza from "../assets/img/Ibiza.png";
 import Palma from "../assets/img/Palma.png";
 import Portofino from "../assets/img/Portofino.png";
 import Hercules from "../assets/img/Hercules.png";
+import Modal from "./Modal";
 
 const items = [
     {
@@ -47,11 +48,13 @@ const items = [
 ];
 
 class Destinations extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             infiniteData: [],
-            message: "Explore more destinations"
+            message: "Explore more destinations",
+            isOpen: null,
+            selected: false
         }
     }
 
@@ -67,7 +70,27 @@ class Destinations extends React.Component {
             });
         }, 500);
     }
+
+    handleClick = city => () => {
+        this.setState({
+            selected: city,
+            isOpen: !this.state.isOpen
+        });
+    };
+
+    closeModal() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
+
     render() {
+
+        let state;
+
+        if (this.state.isOpen === true) {
+            state = this.state.isOpen ? "shown" : "";
+        }
 
         return (
             <section className="destinations-section">
@@ -87,7 +110,16 @@ class Destinations extends React.Component {
                                     boats={prop.boats}
                                     cols={prop.cols}
                                     img={prop.img}
+                                    onHandleClick={this.handleClick(prop.city)}
                                 />)}
+                            {items.map((data, i) =>
+                                <Modal
+                                    key={i}
+                                    city={this.state.selected}
+                                    state={state}
+                                    onCloseModal={this.closeModal.bind(this)}
+                                />
+                            )};
                         </div>
                         <div className="row-fluid">
                             {this.state.infiniteData.map((data, i) =>
@@ -98,7 +130,16 @@ class Destinations extends React.Component {
                                     boats={data.boats}
                                     cols={data.cols}
                                     img={data.img}
+                                    onHandleClick={this.handleClick(data.city)}
                                 />)}
+                            {items.map((data, i) =>
+                                <Modal
+                                    key={i}
+                                    city={this.state.selected}
+                                    state={state}
+                                    onCloseModal={this.closeModal.bind(this)}
+                                />
+                            )};
                         </div>
                         <LoadMore
                             onLoadData={this.loadData.bind(this)}

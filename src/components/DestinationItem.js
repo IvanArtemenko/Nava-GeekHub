@@ -3,7 +3,7 @@ import boatIcon from "../assets/img/sailboat.svg";
 
 const DestinationItem = props =>
     <div className={"col-xs-12 col-sm-"+(props.cols)}>
-        <div className="destination-item">
+        <div className="destination-item" onClick={props.onHandleClick}>
             <div className="mask">
                 <img src={props.img} alt="img"/>
             </div>
